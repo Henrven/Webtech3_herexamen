@@ -42,7 +42,7 @@ app.get('/search_straat', (req, res) => {
 
 //Search straat
 app.get('/search_snelheid', (req, res) => {
-    db.collection('overtredingen').find({ aantal_overtredingen_snelheid: {$gt: req.query.snelheid} }).toArray((err, result) => {
+    db.collection('overtredingen').find({ aantal_overtredingen_snelheid: {$gte: Number(req.query.snelheid) }}).toArray((err, result) => {
         console.log(result)
         if (result.length <= 0) {
             res.redirect('/search_result_err')
