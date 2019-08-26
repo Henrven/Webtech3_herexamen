@@ -11,7 +11,20 @@ export class AppComponent implements OnInit {
     public overtredingenservice: OvertredingenService
   ) { }
 
+  overtredingenlijst = []
+overtredingenlijstSort = []
+  straat 
+  overtredingen
+
   ngOnInit(){
-    console.log(this.overtredingenservice.getOvertredingenPlaatsEnSnelheid("BISSCHOPPENHOFLAAN", 20))
+    console.log(this.overtredingenservice.getAllOvertredingen())
+  }
+
+  findOvertredingen(){
+    this.overtredingenlijst = this.overtredingenservice.getOvertredingenPlaatsEnSnelheid(this.straat, this.overtredingen)
+  }
+
+  findAllOvertredingenSort(){
+    this.overtredingenlijstSort = this.overtredingenservice.getAllOvertredingenSort();
   }
 }

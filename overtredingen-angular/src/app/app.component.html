@@ -1,21 +1,31 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
-  <h1>Pokemon!</h1>
-  <h2>Zoek op naam</h2>
+<h4>Henricus van de Ven</h4>
+  <h1>overtredingen!</h1>
+  
   <div>
-    <input type="text" [(ngModel)]="straat"><br><br>
-    <input type="number" [(ngModel)]="overtredingen"><br><br>
+    Naam: <input type="text" [(ngModel)]="straat"><br><br>
+    Aantal overtredingen: <input type="number" [(ngModel)]="overtredingen"><br><br>
     <input type="submit" value="Find" (click)="findOvertredingen()"><br><br>
-    <h2 *ngFor="let item of overtredingenLijst;">
+    <h3 *ngFor="let item of overtredingenlijst;">
       Datum: {{item.datum_vaststelling}}<br>
       Opnameplaats: {{item.opnameplaats_straat}}<br>
       Snelheidsovertredingen: {{item.aantal_overtredingen_snelheid}}<br>
       Roodlichtovertredingen: {{item.aantal_overtredingen_roodlicht}}<br>
-    </h2>
-  </div>
-  
+    </h3>
+    </div>
+
+<div>
+    <input type="submit" value="Find sorted" (click)="findAllOvertredingenSort()"><br><br>
+    <h3 *ngFor="let item of overtredingenlijstSort;">
+      Datum: {{item.datum_vaststelling}}<br>
+      Opnameplaats: {{item.opnameplaats_straat}}<br>
+      Snelheidsovertredingen: {{item.aantal_overtredingen_snelheid}}<br>
+      Roodlichtovertredingen: {{item.aantal_overtredingen_roodlicht}}<br>
+      </h3>
+    </div>
+
 
 
 </div>
-
 <router-outlet></router-outlet>
