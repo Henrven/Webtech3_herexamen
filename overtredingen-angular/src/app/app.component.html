@@ -5,9 +5,19 @@
   
   <div>
     Naam: <input type="text" [(ngModel)]="straat"><br><br>
+    <input type="submit" value="Find" (click)="findOvertredingenPlaats()"><br><br>
+    <h3 *ngFor="let item of overtredingenlijstPlaats;">
+      Datum: {{item.datum_vaststelling}}<br>
+      Opnameplaats: {{item.opnameplaats_straat}}<br>
+      Snelheidsovertredingen: {{item.aantal_overtredingen_snelheid}}<br>
+      Roodlichtovertredingen: {{item.aantal_overtredingen_roodlicht}}<br>
+    </h3>
+    </div>
+
+    <div>
     Aantal overtredingen: <input type="number" [(ngModel)]="overtredingen"><br><br>
-    <input type="submit" value="Find" (click)="findOvertredingen()"><br><br>
-    <h3 *ngFor="let item of overtredingenlijst;">
+    <input type="submit" value="Find" (click)="findOvertredingenSnelheid()"><br><br>
+    <h3 *ngFor="let item of overtredingenlijstSnelheid;">
       Datum: {{item.datum_vaststelling}}<br>
       Opnameplaats: {{item.opnameplaats_straat}}<br>
       Snelheidsovertredingen: {{item.aantal_overtredingen_snelheid}}<br>

@@ -11,8 +11,9 @@ export class AppComponent implements OnInit {
     public overtredingenservice: OvertredingenService
   ) { }
 
-  overtredingenlijst = []
+  overtredingenlijstPlaats = []
 overtredingenlijstSort = []
+overtredingenlijstSnelheid =[]
   straat 
   overtredingen
 
@@ -20,8 +21,12 @@ overtredingenlijstSort = []
     console.log(this.overtredingenservice.getAllOvertredingen())
   }
 
-  findOvertredingen(){
-    this.overtredingenlijst = this.overtredingenservice.getOvertredingenPlaatsEnSnelheid(this.straat, this.overtredingen)
+  findOvertredingenPlaats(){
+    this.overtredingenlijstPlaats = this.overtredingenservice.getOvertredingenPlaats(this.straat)
+  }
+
+  findOvertredingenSnelheid(){
+    this.overtredingenlijstSnelheid = this.overtredingenservice.getOvertredingenSnelheid(this.overtredingen)
   }
 
   findAllOvertredingenSort(){
