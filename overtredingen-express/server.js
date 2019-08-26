@@ -52,3 +52,15 @@ app.get('/search_snelheid', (req, res) => {
         }
     })
 })
+
+//Search straat
+app.get('/search', (req, res) => {
+    db.collection('overtredingen').find().sort({datum_vaststelling: 1, opnameplaats_straat: 1}).toArray((err, result) => {
+        if (result.length <= 0) {
+            res.redirect('/search_result_err')
+            return;
+        } else {
+            res.render('index.ejs', { overtreding: result })
+        }
+    })
+})
