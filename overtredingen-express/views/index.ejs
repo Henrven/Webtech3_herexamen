@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+</head>
+<body>
+  <h2>Henricus van de Ven</h2>
+  <br>
+<h1>Overtredingen:</h1>
+
+<h1>Alle overtredingen voor straat:</h1>
+
+<form action='/search_straat' method="GET">
+    Straatnaam: <input type='text' name='straat' > 
+    <button type='submit'>Zoeken!</button>
+</form>
+<br><br>
+
+<form action='/search_snelheid' method="GET">
+  Snelheidsovertredingen: <input type='text' name='snelheid' > 
+  <button type='submit'>Zoeken!</button>
+</form>
+
+<ul class="overtredingen">
+    <% for(var i=0; i<overtreding.length; i++) {%>
+      <li class="Overtredingen">
+        Datum Vaststelling: <span><%= overtreding[i].datum_vaststelling %></span><br>
+        Opnameplaats: <span><%= overtreding[i].opnameplaats_straat %></span><br>
+        Snelheidsovertreding <span><%= overtreding[i].aantal_overtredingen_snelheid%></span><br>
+        Roodlichtovertreding <span><%= overtreding[i].aantal_overtredingen_roodlicht%></span><br>
+      </li><br>
+  <% } %>
+</ul>
+
+</body>
+</html>
