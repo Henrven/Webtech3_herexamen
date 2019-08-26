@@ -36,12 +36,5 @@ export class OvertredingenService {
     return this.overtredinglijst
   }
 
-  getAllOvertredingenSort() {
-    let overtredingen = this.getAllOvertredingen()
-    for (let overtreding of overtredingen) {
-      this.allOvertredingenLijst.push(overtreding)
-    }
-    return this.allOvertredingenLijst.sort((a, b) => a.datum_vaststelling - b.datum_vaststelling || a.opnameplaats_straat.toLowerCase() - b.opnameplaats_straat.toLowerCase());
-  }
 
 }

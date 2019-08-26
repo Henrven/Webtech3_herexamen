@@ -30,6 +30,7 @@ overtredingenlijstSnelheid =[]
   }
 
   findAllOvertredingenSort(){
-    this.overtredingenlijstSort = this.overtredingenservice.getAllOvertredingenSort();
+    this.overtredingenlijstSort = this.overtredingenservice.getAllOvertredingen();
+    this.overtredingenlijstSort.sort((a, b) => a.datum_vaststelling > b.datum_vaststelling ? 1: (a.datum_vaststelling === b.datum_vaststelling) ? (( a.opnameplaats_straat > b.opnameplaats_straat) ? 1 : -1) : -1);
   }
 }
